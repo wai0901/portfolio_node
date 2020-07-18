@@ -1,0 +1,177 @@
+.background-porfolio {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.background-porfolio .card-container {
+  position: relative;
+  min-height: 500px;
+  width: 70%;
+  min-width: 280px;
+  max-width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(min-content, max-content);
+  transition: 0.5s 0.4s ease-out;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.background-porfolio .card-container .project-intro {
+  transition: 0.2s ease-in-out;
+}
+.background-porfolio .card-container .project-intro img {
+  width: 95%;
+  max-width: 900px;
+  max-height: 500px;
+  object-fit: contain;
+}
+.background-porfolio .card-container .project-intro .tools-icons {
+  padding: 20px 10px;
+}
+.background-porfolio .card-container .project-intro .tools-icons i {
+  padding: 0 5px;
+}
+.background-porfolio .card-container .project-intro p {
+  line-height: 1.6rem;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin-top: 50px;
+  text-align: center;
+  color: #999;
+  transition: opacity 0.3s ease;
+}
+
+.description a {
+  color: #4A9DF6;
+  text-decoration: none;
+}
+
+.btn.is-open ~ .description {
+  opacity: 0;
+}
+
+.btn {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 40px;
+  margin: 10px auto;
+  transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1), height 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  text-align: center;
+}
+
+.btn-front {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  background-color: #F44336;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: background 0.15s ease, line-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 0;
+  border-radius: 2px;
+}
+
+.btn-front:hover {
+  background-color: #f77066;
+}
+
+.btn.is-open .btn-front {
+  pointer-events: none;
+  line-height: 650px;
+}
+
+.btn-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  color: #222;
+  transform: translateZ(-2px) rotateX(180deg);
+  overflow: hidden;
+  transition: box-shadow 0.5s ease;
+}
+.btn-back p {
+  line-height: 1.6rem;
+  font-size: 0.9rem;
+}
+.btn-back .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.btn-back .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-back p {
+  margin-top: 27px;
+  margin-bottom: 25px;
+}
+
+.btn-back button {
+  padding: 12px 20px;
+  width: 30%;
+  margin: 0 5px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 2px;
+  font-size: 1em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: background 0.15s ease;
+}
+.btn-back button:focus {
+  outline: 0;
+}
+.btn-back button.btn-close {
+  background-color: #2196F3;
+  color: #fff;
+}
+.btn-back button.btn-close:hover {
+  background-color: #51adf6;
+}
+
+.btn.is-open .btn-back {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn.is-open {
+  width: 100%;
+  min-width: 280px;
+  max-width: 800px;
+  max-height: 650px;
+}
+
+.btn[data-direction=bottom].is-open {
+  transform: rotateX(-180deg);
+}
+
+.project-intro-hide {
+  position: absolute;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=buttons.css.map */
