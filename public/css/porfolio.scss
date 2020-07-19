@@ -1,5 +1,5 @@
-$transition-duration: 0.5s;
-$transition-easing: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$transition-duration: 0.7s;
+$transition-easing: cubic-bezier(0.230, 1.000, 0.320, 1.300);
 $bounce-easing: cubic-bezier(0.175, 0.885, 0.320, 1);
 $card-max-width: 800px;
 $closed-width: 200px;
@@ -42,7 +42,7 @@ $description-font-size: 0.9rem;
         grid-auto-rows: minmax(min-content, max-content);
         // justify-items: center;
         // align-items: center;
-        transition: 0.5s 0.4s ease-out;
+        transition: 0.5s 0.4s ease-in-out;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.2);
@@ -61,6 +61,7 @@ $description-font-size: 0.9rem;
                 }
             }
             p {
+                padding: 0 10px;
                 line-height: $line-height;
                 font-size: $description-font-size;
             }
@@ -91,7 +92,8 @@ $description-font-size: 0.9rem;
     width: $closed-width;
     height: $closed-height;
     margin: 10px auto;
-    transition: width $transition-duration $transition-easing,
+    // transition: width $transition-duration $transition-easing,
+    transition: 
         height $transition-duration $transition-easing,
         transform $transition-duration $bounce-easing;
     transform-style: preserve-3d;
@@ -191,8 +193,7 @@ $description-font-size: 0.9rem;
     width: 100%;
     min-width: 280px;
     max-width: 800px;
-    // height: 100%;
-    // min-height: 400px;
+    min-height: 450px;
     max-height: $opened-height;
 }
 
@@ -204,9 +205,15 @@ $description-font-size: 0.9rem;
     position: absolute;
     opacity: 0;
 }
-@media screen and (min-height: 500px) {
+@media screen and (min-width: 400px) {
     .btn.is-open {
-        // min-height: 400px;
+        min-height: 500px;
+        // max-height: 600px;
+    }
+}
+@media screen and (min-width: 800px) {
+    .btn.is-open {
+        min-height: 600px;
         // max-height: 600px;
     }
 }

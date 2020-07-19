@@ -2,7 +2,7 @@ const btns = document.querySelectorAll( 'div.btn');
 const projectIntro = document.querySelectorAll('.project-intro');
 
 const btnFront = document.querySelectorAll( 'button.btn-front' ),
-    btnClose = document.querySelectorAll( 'button.btn-back button.btn-close' );
+      btnClose = document.querySelectorAll( 'button.btn-close' );
 
 
 // btnFront.addEventListener( 'click', function() {
@@ -47,7 +47,13 @@ btnFront.forEach((selectedBtn, index) =>
     })
 )
 
-btnClose.addEventListener( 'click', function() {	
-    btns.classList.remove( 'is-open' );
-    projectIntro.classList.remove( 'project-intro-hide');
-});
+btnClose.forEach((selectedBtn, index) => 
+    selectedBtn.addEventListener( 'click', (event) => {	
+        event.preventDefault;
+
+        let selectedBtn = btns[index]
+
+        selectedBtn.classList.remove( 'is-open' );
+        projectIntro[index].classList.remove( 'project-intro-hide');
+    })
+);
