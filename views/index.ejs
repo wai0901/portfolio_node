@@ -52,28 +52,44 @@
                         <h4><%= data.title %></h4>
                         <div class="project-intro">
                             <img src="<%= data.image %>" alt="luke">
+                            <!-- libraries icons -->
                             <div class="tools-icons">
-                                <i class="fab fa-js"></i>
-                                <i class="fab fa-node-js"></i>
-                                <i class="fab fa-react"></i>
-                                <i class="fab fa-aws"></i>
-                                <i class="fab fa-sass"></i>
+                                <% data.toolsIcons.forEach(icon => { %>
+                                    <i class="<%= icon %>"></i>
+                                <% }) %>
                             </div>
+                            <!-- libraries description in text -->
                             <div>
                                 <p><%= data.tools %></p>
                             </div>
                         </div>
                         <div class="btn <%= "btn" + data.id %>">
                             <div class="btn-back">
+
+                                <!-- YouTube Video -->
                                 <div class="video-container">
                                     <iframe width="100%" height="100%" 
                                         src="<%= data.youTubeLink %>" frameborder="0" 
                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                     </iframe>
                                 </div>
+
+                                <!-- Project description -->
                                 <p><%= data.tools %></p>
-                                <button class="btn-close">Close</button>
+                                <div class="links-container">
+
+                                    <!-- Website link and Github links -->
+                                    <div>
+                                        <a href="<%= data.websiteLink %>" target="_blank" class="tooltip"><span class="tooltiptext">Website</span><i class="fas fa-link"></i></a>
+                                        <% data.githubLink.forEach(link => { %>
+                                            <a href="<%= link.link %>" target="_blank" class="tooltip"><span class="tooltiptext"><%= link.discription %></span><i class="fab fa-github-square"></i></a>
+                                        <% }) %>
+                                    </div>
+                                    <!-- Close popup button -->
+                                    <button class="btn-close">Close</button>
+                                </div>
                             </div>
+                            <!-- Open popup button -->
                             <button class="btn-front">Detail</button>
                         </div>
                     </div>

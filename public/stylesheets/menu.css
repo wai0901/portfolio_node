@@ -230,6 +230,26 @@
     right: -85%;
   }
 }
+@media screen and (min-width: 1200px) {
+  .menu-container .text-menu {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .menu-container .text-menu .links-group {
+    margin: 0;
+    padding: 0;
+    left: 5rem;
+  }
+  .menu-container .text-menu .links-group .links {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    line-height: 1.5rem;
+    padding: 0 0 4rem;
+  }
+  .menu-container .text-menu .contact-group {
+    right: 5rem;
+  }
+}
 .menu-show {
   margin: 0;
   padding: 0;

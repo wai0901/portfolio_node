@@ -10,8 +10,21 @@ const portfolioData = [
     tools: 'React, Redux, React-Router, Thunk, Material-UI, Mongo, Mogoose, AWS EC2, Functional shopping cart by fetching and pushing data from AWS server and MongoDB data base, Validation control form',
     websiteLink: 'https://lukeexpress.com/',
     githubLink: [
-                    'https://github.com/wai0901/luke-web-express',
-                    'https://github.com/wai0901/luke-web-express-server'
+                    {
+                        discription: 'Client Code',
+                        link: 'https://github.com/wai0901/luke-web-express'
+                    },
+                    {
+                        discription: 'Server Code',
+                        link: 'https://github.com/wai0901/luke-web-express-server'
+                    },
+                ],
+    toolsIcons: [
+                    'fab fa-js',
+                    'fab fa-node-js',
+                    'fab fa-react',
+                    'fab fa-sass',
+                    'fab fa-aws',
                 ],
     },
     {
@@ -25,7 +38,14 @@ const portfolioData = [
     tools: 'React Native Expo, React Navigation, Redux, Firebase, Functional shopping cart by fetching and pushing data from Firebase server',
     websiteLink: '#',
     githubLink: [
-                    'https://github.com/wai0901/Luke-react-native'
+                    {
+                        discription: 'Github Code',
+                        link: 'https://github.com/wai0901/Luke-react-native'
+                    }
+                ],
+    toolsIcons: [
+                    'fab fa-js',
+                    'fab fa-react',
                 ],
     },
     {
@@ -39,8 +59,15 @@ const portfolioData = [
     tools: 'React, Chart.js, Axios, Postman Covid-19 API',
     websiteLink: 'https://covid-19-live-tracker.herokuapp.com',
     githubLink: [
-                    'https://github.com/wai0901/Covid19tracker'
+                    {
+                        discription: 'Github Code',
+                        link: 'https://github.com/wai0901/Covid19tracker'
+                    }
                 ],
+    toolsIcons: [
+                    'fab fa-js',
+                    'fab fa-react',
+    ],
     },
     {
     time: 'sun',
@@ -53,7 +80,15 @@ const portfolioData = [
     tools: 'html, sass, javascript, nodejs, express',
     websiteLink: '#',
     githubLink: [
-                    'https://github.com/wai0901/Porfolio'
+                    {
+                        discription: 'Github Code',
+                        link: 'https://github.com/wai0901/Porfolio'
+                    }
+                ],
+    toolsIcons: [
+                    'fab fa-js',
+                    'fab fa-node-js',
+                    'fab fa-sass',
                 ],
     },
     {
@@ -67,7 +102,14 @@ const portfolioData = [
     tools: 'html, css, javascript, bootstrap, jQuery',
     websiteLink: 'https://wai0901.github.io/wonagseged_kaffa',
     githubLink: [
-                    'https://github.com/wai0901/wonagseged_kaffa'
+                    {
+                        discription: 'Github Code',
+                        link: 'https://github.com/wai0901/wonagseged_kaffa'
+                    }
+                ],
+    toolsIcons: [
+                    'fab fa-js',
+                    'fab fa-bootstrap',
                 ],
     },
     {
@@ -78,10 +120,17 @@ const portfolioData = [
     image: 'img/Weather_Webapp.jpg',
     youTubeLink: 'https://www.youtube.com/embed/skC5g5xHqeI',
     title: 'Weather Web App',
-    tools: 'html, css, javascript, react, nodejs',
+    tools: 'html, css, javascript, nodejs',
     websiteLink: 'https://weather-webapp.netlify.com',
     githubLink: [
-                    'https://github.com/wai0901/weather-webapp'
+                    {
+                        discription: 'Github Code',
+                        link: 'https://github.com/wai0901/weather-webapp'
+                    }
+                ],
+    toolsIcons: [
+                    'fab fa-js',
+                    'fab fa-node-js',
                 ],
     },
 ]

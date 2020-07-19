@@ -260,6 +260,29 @@ $menuColorShow: rgba(41, 128, 185, 1.0);
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .menu-container {
+        .text-menu {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            .links-group {
+                @include margin-padding-zero;
+                left: 5rem;
+                .links {
+                    font-size: 1.8rem;
+                    letter-spacing: 4px;
+                    line-height: 1.5rem;
+                    padding: 0 0 4rem;
+                }
+            }
+            .contact-group {
+                right: 5rem;
+                // margin: 0 4rem 0 0;
+            }
+        }
+    }
+}
+
 // @media screen and (max-width: 1200px) {
 //     .menu-container {
 //         right: -85%;
