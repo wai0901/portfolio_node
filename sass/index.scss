@@ -40,27 +40,87 @@ body {
     @include margin-padding-zero;
 }
 
+//for the contact form email message
+.message-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    transition: 0.35s ease-in-out;
+    opacity: 1;
+    .message-card {
+        position: relative;
+        margin: 300px auto 0;
+        padding: 0 20px;
+        min-width: 300px;
+        max-width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        background-color: rgba(99, 99, 99, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+            position: relative;
+            // top: 250px;
+            @include margin-padding-zero;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: rgb(223, 223, 223)
+            // margin: 30px auto 0;
+        }
+        button {
+            padding: 12px 20px;
+            width: 150px;
+            margin: 30px 5px;
+            background-color: #F44336;
+            border: 0;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ddd;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+            transition: 0.15s ease-in-out;
+            &:focus {
+                outline: 0;
+            }
+            &:hover {
+              background-color: lighten(#F44336, 10%);
+            }
+        }
+    }
+}
+.message-container-hide {
+    top: -100%;
+}
+
 // Copyright Section
 
-// .copyright-container {
-//     @include height-width-100;
-//     position: fixed;
-//     display: flex;
-//     justify-content: center;
-//     align-items: flex-end;
-//     z-index: 1;
-//     .copyright {
-//         font-size: 0.8rem;
-//         color: $copyright;
-//     }
-// }
-// @media screen and (max-width: 520px) {
-//     .copyright-container {
-//         .copyright {
-//             font-size: 0.7rem;
-//         }
-//     }
-// }
+.copyright-container {
+    @include height-width-100;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    .copyright {
+        font-size: 0.8rem;
+        color: $copyright;
+    }
+}
+@media screen and (max-width: 520px) {
+    .copyright-container {
+        .copyright {
+            font-size: 0.7rem;
+        }
+    }
+}
 
 // Dots indicator
 

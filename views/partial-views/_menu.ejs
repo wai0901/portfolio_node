@@ -18,14 +18,19 @@
                 </li>
             </ul>
             <div class="form-group">
-                <form action="https://formspree.io/xoqkeaoy" method="POST">
+                <form action="/" method="POST">
                     <label class="email-label">Email:
-                        <input class="email-input" type="text" name="_replyto">
+                        <input class="email-input" type="email" name="email" required>
                     </label>
                     <label class="message-label">Message:
-                        <textarea class="message-input" name="message"></textarea>
+                        <textarea class="message-input" name="text" required></textarea>
                     </label>
-                    <button class="submit-button" type="submit">Send</button>
+                    <button id="contact-submit" class="submit-button" type="submit">Send</button>
+                    <div class="fail-massage-container">
+                        <% if (sendMailSuccess === "error") { %>
+                            <p><%= contactMessage %></p>
+                        <% } %>
+                    </div>
                 </form>
             </div>
         </div>
@@ -43,20 +48,18 @@
     </div>
 
     <!-- About me section -->
-
     <div class="about-hide info-hide">
-        <!-- <div class="info-layout">
+        <div class="info-layout">
             <div class="about-me">
                 <h1>About me</h1>
-                <p>I have been working as a graphic designer for many years, because of my designer background, it helps me to build more elegant and user-friendly web designs.</p>
-                <p>I have used HTML, CSS, javascript, Bootstrap, React, React Native, jQuary, NodeJs to build the web application and website. In addition to my knowledge base, I actively seek out new technologies and stay up-to-date on industry trends and advancements.</p>
-                <p>I am confident that I am able to use my knowledge and skill to provide a great contribution to your team and company.</p>
+                <p>Hi, My name is Wai, my friends and co-worker usually call me Kent. I am a fullstack web developer, I have experienced in Html, CSS, Javascript, Bootstrap, Jquery, React, React Native, NodeJs, Express, PHP, and some authentication library such as Passport. In addition to my knowledge base, I actively seek out new technologies and stay up-to-date on industry trends and advancements. I am also a professional graphic designer with many years of experience, because of my designer background, it helps me to build more elegant and user-friendly web designs.</p>
+                <p>I am confident that I am able to use my knowledge and skill to provide a great 
                 <p>Feel free to contact me if you have any question</p>
             </div>
         </div>
         <div class="back-to-menu">
             <a class="info-close" onclick="backToMenu('about')" title="Back to Menu"><i class="fas fa-chevron-circle-left"></i></a>
-        </div> -->
+        </div>
     </div>
 
     <!-- burger menu button -->

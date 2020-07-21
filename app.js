@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require("body-parser");
 // const logger = require('morgan');
 
 const indexRouter = require('./routes/index-router');
@@ -23,9 +24,11 @@ require('dotenv').config();
 const app = express();
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+
 app.use('/', indexRouter);
-
-
 
 // app.use(logger('dev'));
 

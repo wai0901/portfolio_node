@@ -114,6 +114,17 @@ moons.forEach(moon => {
     colorObserver.observe(moon);
 })
 
+
+//message popup for email contact
+const messageContainer = document.getElementById("message-container");
+const messageCloseBtn = document.getElementById("message-close-btn");
+
+messageCloseBtn.addEventListener("click", () => {
+    messageContainer.classList.add('message-container-hide');
+    console.log("click");
+})
+
+
 // Scroll button
 
 // document.querySelector("#buttons").addEventListener("onclick", scrollWin = () => {
@@ -131,3 +142,4 @@ moons.forEach(moon => {
 //         });
 //     }) 
 // })
+

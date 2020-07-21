@@ -1,104 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio</title>
-    
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300 400,700,900&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/92f66e5c84.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="./stylesheets/index.css">
-        <link rel="stylesheet" href="./stylesheets/menu.css">
-        <link rel="stylesheet" href="./stylesheets/porfolio.css">
-    </head>
-    <body>
-        <div class="main-container">
+<%- include('./partial-views/_header.ejs') %>
 
-            <!-- Menu -> menu.css-->
-            <%- include('./partial-views/_menu.ejs') %>
+    <div class="main-container">
 
-            <!-- Background's cloud  -> index.css-->
-            <%- include('./partial-views/_clouds.ejs') %>
-
-            <!-- Dots indicator  -> index.css-->
-            <%- include('./partial-views/_dots-indicator.ejs') %>
-
-            <!-- Airplane  -> index.css-->
-            <%- include('./partial-views/_air-plane.ejs') %>
-
-            <!-- Title Section  -> index.css-->
-            <div id="s0" class="title-container sections" data-dot="d0">
-                <div class="title-group title">
-                    <p>const</p>
-                    <h1>wai leung</h1>
+        <!-- SendMail alert -->
+        <% if (sendMailSuccess === "success") { %>
+            <div id="message-container" class="message-container">
+                <div class="message-card">
+                    <p><%= contactMessage %></p>
+                    <button id="message-close-btn">Close</button>
                 </div>
-                <div class="title-group sub-title">
-                    <p><span> = </span> "web dev" <span> + </span> "graphic designer" <span class="semicolon"> ; </span></p>
-                </div>
-                <div class="title-group sun-container">
-                    <svg class="sun" width="100%" height="50%" href="#">
-                        <image xlink:href="img/sun.svg" x="30%" y="0" width="130px" height="130px"></image>
-                    </svg>
-                </div>
-            </div> <!-- title-container -->
+            </div>
+        <% } %>
 
-            <!-- earth animation  -> index.css-->
-            <%- include('./partial-views/_earth.ejs') %>
+        <!-- Menu -> menu.css-->
+        <%- include('./partial-views/_menu.ejs') %>
 
-            <!-- porfolio Section  -> porfolio.css-->
-            <% portfolioData.forEach(data => { %> 
-                <div id="<%= data.linkId %>" class="background-porfolio">
-                    <div id="<%= data.id %>" class="card-container" data-dot="<%= data.dataDot %>>">
-                        <h4><%= data.title %></h4>
-                        <div class="project-intro">
-                            <img src="<%= data.image %>" alt="luke">
-                            <!-- libraries icons -->
-                            <div class="tools-icons">
-                                <% data.toolsIcons.forEach(icon => { %>
-                                    <i class="<%= icon %>"></i>
-                                <% }) %>
-                            </div>
-                            <!-- libraries description in text -->
-                            <div>
-                                <p><%= data.tools %></p>
-                            </div>
-                        </div>
-                        <div class="btn <%= "btn" + data.id %>">
-                            <div class="btn-back">
+        <!-- Background's cloud  -> index.css-->
+        <%- include('./partial-views/_clouds.ejs') %>
 
-                                <!-- YouTube Video -->
-                                <div class="video-container">
-                                    <iframe width="100%" height="100%" 
-                                        src="<%= data.youTubeLink %>" frameborder="0" 
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                    </iframe>
-                                </div>
+        <!-- Dots indicator  -> index.css-->
+        <%- include('./partial-views/_dots-indicator.ejs') %>
 
-                                <!-- Project description -->
-                                <p><%= data.tools %></p>
-                                <div class="links-container">
-
-                                    <!-- Website link and Github links -->
-                                    <div>
-                                        <a href="<%= data.websiteLink %>" target="_blank" class="tooltip"><span class="tooltiptext">Website</span><i class="fas fa-link"></i></a>
-                                        <% data.githubLink.forEach(link => { %>
-                                            <a href="<%= link.link %>" target="_blank" class="tooltip"><span class="tooltiptext"><%= link.discription %></span><i class="fab fa-github-square"></i></a>
-                                        <% }) %>
-                                    </div>
-                                    <!-- Close popup button -->
-                                    <button class="btn-close">Close</button>
-                                </div>
-                            </div>
-                            <!-- Open popup button -->
-                            <button class="btn-front">Detail</button>
-                        </div>
-                    </div>
-                </div>
-            <% }) %>
+        <!-- Copyright Section -->
+        <div class="copyright-container">
+            <p class="copyright"></p>
         </div>
 
-        <script src="js/scripts.js"></script>
-        <script src="js/porfolio.js"></script>
-    </body>
+        <!-- Airplane  -> index.css-->
+        <%- include('./partial-views/_air-plane.ejs') %>
 
-</html>
+        <!-- Title Section  -> index.css-->
+        <div id="s0" class="title-container sections" data-dot="d0">
+            <div class="title-group title">
+                <p>const</p>
+                <h1>wai leung</h1>
+            </div>
+            <div class="title-group sub-title">
+                <p><span> = </span> "web dev" <span> + </span> "graphic designer" <span class="semicolon"> ; </span></p>
+            </div>
+            <div class="title-group sun-container">
+                <svg class="sun" width="100%" height="50%" href="#">
+                    <image xlink:href="img/sun.svg" x="30%" y="0" width="130px" height="130px"></image>
+                </svg>
+            </div>
+        </div> <!-- title-container -->
+
+        <!-- earth animation  -> index.css-->
+        <%- include('./partial-views/_earth.ejs') %>
+
+        <!-- porfolio Section  -> porfolio.css-->
+        <% portfolioData.forEach(data => { %> 
+            <div id="<%= data.linkId %>" class="background-porfolio">
+                <div id="<%= data.id %>" class="card-container" data-dot="<%= data.dataDot %>>">
+                    <h4><%= data.title %></h4>
+                    <div class="project-intro">
+                        <img src="<%= data.image %>" alt="luke">
+
+                        <!-- libraries icons -->
+                        <div class="tools-icons">
+                            <% data.toolsIcons.forEach(icon => { %>
+                                <i class="<%= icon %>"></i>
+                            <% }) %>
+                        </div>
+
+                        <!-- libraries description in text -->
+                        <div>
+                            <p><%= data.tools %></p>
+                        </div>
+                    </div>
+                    <div class="btn <%= "btn" + data.id %>">
+                        <div class="btn-back">
+
+                            <!-- YouTube Video -->
+                            <div class="video-container">
+                                <iframe width="100%" height="100%" 
+                                    src="<%= data.youTubeLink %>" frameborder="0" 
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <!-- Project description -->
+                            <p><%= data.tools %></p>
+                            <div class="links-container">
+
+                                <!-- Website link and Github links -->
+                                <div>
+                                    <a href="<%= data.websiteLink %>" target="_blank" class="tooltip"><span class="tooltiptext">Website</span><i class="fas fa-link"></i></a>
+                                    <% data.githubLink.forEach(link => { %>
+                                        <a href="<%= link.link %>" target="_blank" class="tooltip"><span class="tooltiptext"><%= link.discription %></span><i class="fab fa-github-square"></i></a>
+                                    <% }) %>
+                                </div>
+
+                                <!-- Close popup button -->
+                                <button class="btn-close">Close</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Open popup button -->
+                        <button class="btn-front">Detail</button>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+<%- include('./partial-views/_footer.ejs') %>

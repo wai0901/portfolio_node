@@ -77,7 +77,7 @@ const portfolioData = [
     image: 'img/portfolio-web.jpg',
     youTubeLink: 'https://www.youtube.com/embed/skC5g5xHqeI',
     title: 'My Web Porfolio Page',
-    tools: 'html, sass, javascript, nodejs, express',
+    tools: 'Html, Sass, Javascript, Nodejs, Express, Nodemailer',
     websiteLink: '#',
     githubLink: [
                     {
@@ -99,7 +99,7 @@ const portfolioData = [
     image: 'img/kaffa_image.jpg',
     youTubeLink: 'https://www.youtube.com/embed/eFk6Hg9HYS8',
     title: 'Kaffa Website',
-    tools: 'html, css, javascript, bootstrap, jQuery',
+    tools: 'Html, Css, Javascript, Bootstrap, JQuery',
     websiteLink: 'https://wai0901.github.io/wonagseged_kaffa',
     githubLink: [
                     {
@@ -120,7 +120,7 @@ const portfolioData = [
     image: 'img/Weather_Webapp.jpg',
     youTubeLink: 'https://www.youtube.com/embed/skC5g5xHqeI',
     title: 'Weather Web App',
-    tools: 'html, css, javascript, nodejs',
+    tools: 'Html, Css, Javascript, Nodejs',
     websiteLink: 'https://weather-webapp.netlify.com',
     githubLink: [
                     {
