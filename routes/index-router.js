@@ -47,7 +47,6 @@ function homePost(req, res, next) {
                 console.log('Error Occurs', err);
                 sendMailSuccess = "error";
                 contactMessage = "Something wrong, please try again.";
-                return next()
             } else {
                 console.log('Email send!');
                 // sendMailSuccess = "success";
@@ -60,7 +59,6 @@ function homePost(req, res, next) {
         console.log("Missing email input or message input");
         sendMailSuccess = "error";
         contactMessage = "Please enter both email and message.";
-        return next()
     }
 }
 
