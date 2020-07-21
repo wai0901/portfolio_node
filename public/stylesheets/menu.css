@@ -166,7 +166,7 @@
 .menu-container .info-hide .info-layout .about-me {
   position: relative;
   margin: auto;
-  width: 60%;
+  width: 80%;
 }
 .menu-container .info-hide .info-layout .about-me h1 {
   margin-top: 20%;
@@ -234,6 +234,18 @@
 @media screen and (min-width: 520px) {
   .menu-container {
     right: -80%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menu-container .info-hide .info-layout .about-me {
+    width: 80%;
+  }
+  .menu-container .info-hide .info-layout .about-me h1 {
+    margin-top: 40%;
+  }
+  .menu-container .info-hide .info-layout .about-me h1, .menu-container .info-hide .info-layout .about-me p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
   }
 }
 @media screen and (min-width: 1000px) {

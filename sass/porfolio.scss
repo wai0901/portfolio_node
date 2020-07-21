@@ -6,7 +6,7 @@ $closed-width: 200px;
 $closed-height: 40px;
 $opened-width: 800px;
 $opened-height: 650px;
-$line-height: 1.6rem;
+$line-height: 1.4rem;
 $description-font-size: 0.9rem;
 
 @mixin margin-padding-zero {
@@ -77,6 +77,11 @@ $description-font-size: 0.9rem;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        h4 {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
         .project-intro {
             transition: 0.2s ease-in-out;
             img {
@@ -86,9 +91,10 @@ $description-font-size: 0.9rem;
                 object-fit: contain;
             }
             .tools-icons {
-                padding: 20px 10px 10px;
+                padding: 15px 10px 10px;
                 i {
                     padding: 0 5px;
+                    font-size: 1.2rem;
                 }
             }
             p {
@@ -170,6 +176,7 @@ $description-font-size: 0.9rem;
         line-height: $line-height;
         font-size: $description-font-size;
         padding: 0 10px;
+        margin: 10px 0;
     }
     .video-container {
         position: relative;
@@ -197,7 +204,7 @@ $description-font-size: 0.9rem;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom:5px;
             justify-content: center;
         }
         div > a {
@@ -211,10 +218,7 @@ $description-font-size: 0.9rem;
         }
     }
 }
-.btn-back p {
-    margin-top: 27px;
-    margin-bottom: 25px;
-}
+
 .btn-back button {
     padding: 12px 20px;
     width: 200px;
@@ -272,7 +276,7 @@ $description-font-size: 0.9rem;
 }
 @media screen and (min-width: 800px) {
     .btn.is-open {
-        min-height: 600px;
+        min-height: 560px;
     }
     .btn-back > .links-container{
         grid-template-columns: repeat(2, 1fr);
@@ -287,6 +291,6 @@ $description-font-size: 0.9rem;
 }
 @media screen and (min-width: 1000px) {
     .btn.is-open {
-        min-height: 680px;
+        min-height: 620px;
     }
 }

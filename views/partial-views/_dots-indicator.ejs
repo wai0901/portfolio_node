@@ -3,12 +3,9 @@
 <div id="indicator-dots" class="up-down-button">
     <div class="dots">
         <a href="#s0"><span class="dot port d0" title="Porfolio"><i class="fab fa-product-hunt"></i></span></a>
-        <a href="#toP1"><span class="dot dot-style d1"></span></a>
-        <a href="#toP2"><span class="dot dot-style d2"></span></a>
-        <a href="#toP3"><span class="dot dot-style d3"></span></a>
-        <a href="#toP4"><span class="dot dot-style d4"></span></a>
-        <a href="#toP5"><span class="dot dot-style d5"></span></a>
-        <a href="#toP6"><span class="dot dot-style d6"></span></a>
+        <% portfolioData.forEach(data => { %>
+            <a href="#<%= data.linkId %>"><span class="dot dot-style <%= data.dataDot %>"></span></a>
+        <% }) %>
         <a id="goNext" href="#s1"><span class="dot port dDown" title="Check out my porfolio"><i class="fas fa-chevron-circle-down"></i></span></a>
     </div>
 </div>

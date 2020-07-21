@@ -19,12 +19,14 @@ let transporter = nodemailer.createTransport({
 // let successtMessage = "Thank you for contacting me, I will get back to you ASAP!";
 let sendMailSuccess;
 let contactMessage;
+let contactMessageStyle;
 
 // /* GET home page. */
 function homeGet(req, res) {
     res.render('index', { portfolioData: portfolioData, 
                           sendMailSuccess: sendMailSuccess, 
-                          contactMessage: contactMessage });
+                          contactMessage: contactMessage,
+                          contactMessageStyle: contactMessageStyle });
     sendMailSuccess = '';
     contactMessage = '';
 }
@@ -48,7 +50,8 @@ function homePost(req, res, next) {
                 return next()
             } else {
                 console.log('Email send!');
-                sendMailSuccess = "success";
+                // sendMailSuccess = "success";
+                contactMessageStyle = "message-container-show";
                 contactMessage = "Thank you for contacting me, I will get back to you ASAP!";
                 return next()
             }

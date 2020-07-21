@@ -57,6 +57,11 @@
   border-radius: 5px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
+.background-porfolio .card-container h4 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
 .background-porfolio .card-container .project-intro {
   transition: 0.2s ease-in-out;
 }
@@ -67,14 +72,15 @@
   object-fit: contain;
 }
 .background-porfolio .card-container .project-intro .tools-icons {
-  padding: 20px 10px 10px;
+  padding: 15px 10px 10px;
 }
 .background-porfolio .card-container .project-intro .tools-icons i {
   padding: 0 5px;
+  font-size: 1.2rem;
 }
 .background-porfolio .card-container .project-intro p {
   padding: 0 10px;
-  line-height: 1.6rem;
+  line-height: 1.4rem;
   font-size: 0.9rem;
 }
 
@@ -143,9 +149,10 @@
   transition: box-shadow 0.7s ease;
 }
 .btn-back p {
-  line-height: 1.6rem;
+  line-height: 1.4rem;
   font-size: 0.9rem;
   padding: 0 10px;
+  margin: 10px 0;
 }
 .btn-back .video-container {
   position: relative;
@@ -174,7 +181,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   justify-content: center;
 }
 .btn-back .links-container div > a {
@@ -185,11 +192,6 @@
 }
 .btn-back .links-container div > a:hover {
   color: #F44336;
-}
-
-.btn-back p {
-  margin-top: 27px;
-  margin-bottom: 25px;
 }
 
 .btn-back button {
@@ -246,7 +248,7 @@
 }
 @media screen and (min-width: 800px) {
   .btn.is-open {
-    min-height: 600px;
+    min-height: 560px;
   }
 
   .btn-back > .links-container {
@@ -262,7 +264,7 @@
 }
 @media screen and (min-width: 1000px) {
   .btn.is-open {
-    min-height: 680px;
+    min-height: 620px;
   }
 }
 
