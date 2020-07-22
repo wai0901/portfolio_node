@@ -3,13 +3,14 @@
     <div class="main-container">
 
         <!-- SendMail alert -->
-        <div id="message-container" class="message-container <%= contactMessageStyle %>">
-            <div class="message-card">
-                <p><%= contactMessage %></p>
-                <button id="message-close-btn">Close</button>
+        <% if (sendMailSuccess === "success") { %>
+            <div id="message-container" class="message-container <%= contactMessageStyle %>">
+                <div class="message-card">
+                    <p><%= contactMessage %></p>
+                    <button id="message-close-btn">Close</button>
+                </div>
             </div>
-        </div>
-
+        <% } %>
         <!-- Menu -> menu.css-->
         <%- include('./partial-views/_menu.ejs') %>
 

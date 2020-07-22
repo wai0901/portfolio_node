@@ -20,7 +20,7 @@ closeMenu.addEventListener("click", () => {
 })
 
 
-// resume fade-in control
+// about fade-in control
 const goToInfo = (dataInfo) => {
     classChange(true, ".text-menu", "text-menu-hide");
     classChange(true, "." + dataInfo + "-hide", "info-show");
@@ -43,13 +43,26 @@ const cards = document.querySelectorAll(".sections"),
       goNext = document.querySelector("#goNext");
 
 
-//message popup for email contact
-const messageContainer = document.getElementById("message-container");
-const messageCloseBtn = document.getElementById("message-close-btn");
+//contact form reset
+const contactForm = document.getElementById("contact-form"),
+      contactSubmit = document.getElementById("contact-submit");
 
-messageCloseBtn.addEventListener("click", () => {
-    messageContainer.classList.remove('message-container-show');
+contactSubmit.addEventListener("click", () => {
+    setTimeout(() => {
+        contactForm.reset();
+    }, 2000)
 })
+
+
+//message popup for email contact
+const messageContainer = document.getElementById("message-container"),
+      messageCloseBtn = document.getElementById("message-close-btn");
+
+if (messageCloseBtn) {
+    messageCloseBtn.addEventListener("click", () => {
+        messageContainer.classList.remove('message-container-show');
+    })
+};
 
 
 // This Observer serves for three different section.

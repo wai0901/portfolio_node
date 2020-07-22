@@ -58,7 +58,7 @@ function homePost(req, res, next) {
             subject: req.body.email, 
             text: req.body.text
         };
-    
+        
         transporter.sendMail(mailOptions, function(err, data) {
             if (err) {
                 console.log('Error Occurs', err);
@@ -66,7 +66,7 @@ function homePost(req, res, next) {
                 contactMessage = "Something wrong, please try again.";
             } else {
                 console.log('Email send!');
-                // sendMailSuccess = "success";
+                sendMailSuccess = "success";
                 contactMessageStyle = "message-container-show";
                 contactMessage = "Thank you for contacting me, I will get back to you ASAP!";
                 return next()
