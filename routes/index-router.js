@@ -1,5 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 const portfolioData = require('../src/portfolioData');
 
@@ -8,13 +9,13 @@ require('dotenv').config();
 const router = express.Router();
 
 //for sending email
-let transporter = nodemailer.createTransport({
+let transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD
     }
-});
+}));
 
 // let successtMessage = "Thank you for contacting me, I will get back to you ASAP!";
 let sendMailSuccess;
