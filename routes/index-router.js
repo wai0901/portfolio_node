@@ -1,6 +1,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
 
 const portfolioData = require('../src/portfolioData');
 
@@ -8,14 +9,29 @@ require('dotenv').config();
 
 const router = express.Router();
 
-//for sending email
-let transporter = nodemailer.createTransport(smtpTransport({
-    service: 'gmail',
+
+const oauth2Client = new OAuth2(
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    "https://developers.google.com/oauthplayground" // Redirect URL
+);
+
+oauth2Client.setCredentials({
+    refresh_token: process.env.REFRESH_TOKEN
+});
+const accessToken = oauth2Client.getAccessToken()
+
+const transporter = nodemailer.createTransport({
+    service: "gmail",
     auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
+         type: "OAuth2",
+         user: "oceangraphy.info@gmail.com", 
+         clientId: process.env.CLIENT_ID,
+         clientSecret: process.env.CLIENT_SECRET,
+         refreshToken: process.env.REFRESH_TOKEN,
+         accessToken: accessToken
     }
-}));
+});
 
 // let successtMessage = "Thank you for contacting me, I will get back to you ASAP!";
 let sendMailSuccess;
@@ -38,7 +54,7 @@ function homePost(req, res, next) {
     if (req.body.email && req.body.text) {
         let mailOptions = {
             from: process.env.EMAIL,
-            to: process.env.EMAIL,
+            to: 'waileung0830@gmail.com',
             subject: req.body.email, 
             text: req.body.text
         };
