@@ -37,7 +37,7 @@ function homePost(req, res, next) {
     if (req.body.email && req.body.text) {
         let mailOptions = {
             from: process.env.EMAIL,
-            to: 'waileung0830@gmail.com',
+            to: process.env.EMAIL,
             subject: req.body.email, 
             text: req.body.text
         };
